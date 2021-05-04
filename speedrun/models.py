@@ -42,6 +42,26 @@ class Run(models.Model):
         default=the_difficulties.monsoon,
     )
 
+    class the_characters(models.TextChoice):
+        commando = 'commando'
+        huntress = 'huntress'
+        bandit = 'bandit'
+        mult = 'mult'
+        engineer = 'engineer'
+        artificer = 'artificer'
+        mercenary = 'mercenary'
+        rex = 'rex'
+        loader = 'loader'
+        acrid = 'acrid'
+        captain = 'captain'
+
+    character = models.CharField(
+        max_length=30,
+        choices=the_characters.choices,
+        default=the_characters.engineer,
+    )
+
+
 
     def __str__(self):
         return "Speedrun instance; " + \
