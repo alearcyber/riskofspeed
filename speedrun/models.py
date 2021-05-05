@@ -42,7 +42,7 @@ class Run(models.Model):
         default=the_difficulties.monsoon,
     )
 
-    class the_characters(models.TextChoice):
+    class the_characters(models.TextChoices):
         commando = 'commando'
         huntress = 'huntress'
         bandit = 'bandit'
